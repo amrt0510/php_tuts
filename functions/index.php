@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * A sample function for pass by reference class
  * @param string $str
@@ -23,7 +22,10 @@ echo $mystr;
 
 
 $arrr = array(
-    array('class' => '1', 'name' => 'amritansh'), array('class' => '2', 'name' => 'neha'), array('class' => '3', 'name' => 'John'));
+    array('class' => '1', 'name' => 'amritansh'),
+    array('class' => '2', 'name' => 'neha'),
+    array('class' => '3', 'name' => 'John')
+);
 
 
 $a = array("red", "green");
@@ -40,7 +42,7 @@ exit;
 
 
 
-//print_r(abc($arrr));
+//print_r(abc(8));
 print_r(abc($arrr, 2));
 
 
