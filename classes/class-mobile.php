@@ -15,40 +15,47 @@ if (!class_exists('Mobile')) {
     class Mobile {
 
         public static $color = 'black';
-        
+        public $color_non = 'black';
 
-        public static function apply_color($color='') {
-            $cur_color = self::$color;
-            //
-        
-            $new_color = $cur_color.'-amrt';
-            return $new_color;
-            
+        public static function set_color($color = '') {
+            self::$color = $color;
         }
 
-//put your code here
+        public static function get_color() {
+            return  self::$color;
+        }
+        
+        
+        public function setnon_color($color_non = '') {
+            $this->color_non = $color_non;
+        }
+
+        public function getnon_color() {
+            return  $this->color_non;
+        }
+
     }
 
 }
 
-//creating new instance 
-//$abc = new Mobile;
-//
-//
-//$abc->color = 'yellow';
-//
-//echo $abc->color;
-//
-////creating another instance 
-//$abc2 = new Mobile ;
-//
-//echo $abc2->color;
-//
-
-//calling properties in static way
-$color = Mobile::apply_color();
-var_dump($color);
+$class_new = new Mobile;
 
 
-?>
- 
+
+$class_new::$color = 'yellow';
+var_dump($class_new::set_color('buffalo'));
+var_dump($class_new::get_color());
+
+
+var_dump($class_new->setnon_color('Abuffalo'));
+var_dump($class_new->getnon_color());
+
+$class_another = new Mobile;
+
+$class_none = new Mobile;
+var_dump($class_none::$color);
+$class_none->color_non = 'red';
+var_dump($class_none->color_non);
+
+var_dump($class_another->color_non);
+?> 
